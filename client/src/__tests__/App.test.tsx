@@ -4,10 +4,12 @@ import puppeteer from "puppeteer";
 
 import App from "../App";
 
+// Smoke Tests
 it("renders without crashing", () => {
   shallow(<App />);
 });
 
+// Unit Tests
 it("renders welcome message", () => {
   const wrapper = shallow(<App />);
   const welcome = (
@@ -35,6 +37,7 @@ it("works", () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+// UI Regression Tests
 describe("jest-image-snapshot usage with an image received from puppeteer", () => {
   let browser;
 
